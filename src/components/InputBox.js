@@ -21,12 +21,14 @@ class InputBox extends React.Component {
     }
 
     render() {
-        return (<input type="text"
+        return (<input
+            type="text"
             className="form-control add-todo"
             value={this.state.value}
             onKeyUp={this.handleKeyUp.bind(this)}
             onChange={this.handleChange.bind(this)}
-            placeholder="Add New"/>);
+            placeholder="Add New"
+        />);
     }
 }
 
