@@ -18,12 +18,13 @@ function App() {
             completed: false
         }
     ];
+    let title = 'Things to do';
 
     return (
         <div className="container">
             <div className="row">
                 <div className="todolist">
-                    <h1>Todos</h1>
+                    <h1>{title.toUpperCase()}</h1>
                     <ul className="list-unstyled">
                         {items.map(item => (
                             <li key={item.id} className="ui-state-default">
