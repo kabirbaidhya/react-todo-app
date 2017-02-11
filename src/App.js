@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoList from './TodoList';
 
 function App() {
     let items = [
@@ -23,21 +24,7 @@ function App() {
     return (
         <div className="container">
             <div className="row">
-                <div className="todolist">
-                    <h1>{title.toUpperCase()}</h1>
-                    <ul className="list-unstyled">
-                        {items.map(item => (
-                            <li key={item.id} className="ui-state-default">
-                                <div className="checkbox">
-                                    <label>
-                                        <input type="checkbox" value=""/>
-                                        {item.text}
-                                    </label>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <TodoList title={title} items={items} />
             </div>
         </div>
     );
