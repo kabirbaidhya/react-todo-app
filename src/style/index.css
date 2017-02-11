@@ -1,0 +1,41 @@
+body {
+    background-color: #EEEEEE;
+}
+
+.todolist {
+    background-color: #FFF;
+    padding: 20px 20px 10px 20px;
+    width: 600px;
+    margin: 30px auto;
+}
+
+.todolist h1 {
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+li.ui-state-default {
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+li.ui-state-default:last-child {
+    border-bottom: none;
+}
+
+.todo-footer {
+    border-top: 1px solid #ddd;
+    background-color: #F4FCE8;
+    margin: 0 -20px -10px -20px;
+    padding: 10px 20px;
+}
+
+.mark-all-done {
+    margin-top: 10px;
+}

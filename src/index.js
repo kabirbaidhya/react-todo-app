@@ -6,6 +6,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
+// Add our style
+import './style/index.css';
+
 ReactDOM.render(
     <App/>,
     document.getElementById('root')
