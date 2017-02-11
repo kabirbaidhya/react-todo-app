@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import TodoList from './TodoList';
+import {FILTER_ACTIVE} from './../services/filter';
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            filter: 'active',
+            filter: FILTER_ACTIVE,
             items: [
                 {
                     id: 1,

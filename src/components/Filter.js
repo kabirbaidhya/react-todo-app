@@ -1,10 +1,7 @@
 import React from 'react';
+import {getOptions} from './../services/filter';
 
-const options = {
-    'all': 'All',
-    'active': 'Active',
-    'completed': 'Completed'
-};
+const options = getOptions();
 
 export default function Filter(props) {
     const {filter, change} = props;
