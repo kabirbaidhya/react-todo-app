@@ -13,10 +13,17 @@ class InputBox extends React.Component {
         this.setState({value: e.target.value});
     }
 
+    clear() {
+        this.setState({value: ''});
+    }
+
     handleKeyUp(e) {
-        if (e.keyCode === KeyCode.KEY_RETURN) {
-            // Add new Todo Here
-            // Clear the text box
+        const {addNew} = this.props;
+        const text = this.state.value.trim();
+
+        if (e.keyCode === KeyCode.KEY_RETURN && text) {
+            addNew(text);
+            this.clear();
         }
     }
 
