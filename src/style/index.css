@@ -30,6 +30,11 @@ li.ui-state-default:last-child {
     border-bottom: none;
 }
 
+li.completed label {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
 .todo-footer {
     border-top: 1px solid #ddd;
     background-color: #F4FCE8;
