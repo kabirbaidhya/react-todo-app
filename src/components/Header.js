@@ -4,6 +4,9 @@ export default function Header(props) {
     const {title} = props;
 
     return (
-        <h1>{title.toUpperCase()}</h1>
+        <header>
+            <h1>{title.toUpperCase()}</h1>
+            <input type="text" className="form-control add-todo" placeholder="Add New" />
+        </header>
     );
 }
