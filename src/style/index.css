@@ -16,6 +16,7 @@ body {
     margin: 0;
     padding-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .form-control {
