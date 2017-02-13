@@ -1,7 +1,9 @@
 # React Todo App
 
 This is a sample react todo app done step-by-step.
-This sample app was a part of react workshop. You can check the slides [here](https://speakerdeck.com/kabirbaidhya/frontend-development-with-react).
+This sample app was a part of react workshop.
+
+You can check the slides [here](https://speakerdeck.com/kabirbaidhya/frontend-development-with-react).
 
 ## Instructions
 
