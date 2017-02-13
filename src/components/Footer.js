@@ -6,11 +6,12 @@ export default function Footer(props) {
 
     return (
         <div className="todo-footer clearfix">
+            <div className="pull-left buttons">
+                <a className="button add"></a>
+                <a className="button search"></a>
+            </div>
             <div className="pull-left">
-                <strong>
-                    <span className="count-todos">{count}</span>
-                </strong>
-                {' items left'}
+                {`${count} items left`}
             </div>
             <div className="pull-right">
                 <Filter filter={filter} change={changeFilter}/>

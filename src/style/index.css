@@ -42,7 +42,7 @@ li.completed label {
     border-top: 1px solid #ddd;
     background-color: #F4FCE8;
     margin: 0 -20px -10px -20px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     position: relative;
 }
 
@@ -60,7 +60,7 @@ li.completed label {
     cursor: pointer;
     color: inherit;
     margin: 3px;
-    padding: 3px 7px;
+    padding: 4px 8px;
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 3px;
@@ -74,8 +74,34 @@ li.completed label {
     border-color: rgba(175, 47, 47, 0.2);
 }
 
-.mark-all-done {
-    margin-top: 10px;
+.todo-footer .buttons {
+    border-right: 1px solid #ccc;
+    margin-right: 15px;
+    padding-right: 10px;
+    height: 20px;
+}
+
+.buttons .button {
+    display: inline-block;
+    margin: 0 5px;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s all;
+}
+
+.buttons .button:hover, .buttons .button.selected {
+    opacity: 1;
+    border-color: #ddd;
+}
+
+.buttons .add {
+    background: url(../assets/add.svg) no-repeat center;
+}
+
+.buttons .search {
+    background: url(../assets/search.svg) no-repeat center;
 }
 
 .alert {
