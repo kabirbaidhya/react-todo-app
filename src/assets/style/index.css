@@ -25,7 +25,7 @@ body {
     margin-top: 20px;
     left: 0;
     right: 0;
-    color: #aaa;
+    color: #999;
     text-align: center;
 }
 
@@ -109,11 +109,11 @@ footer .buttons {
 }
 
 .buttons .add {
-    background: url(../assets/add.svg) no-repeat center;
+    background: url(../images/add.svg) no-repeat center;
 }
 
 .buttons .search {
-    background: url(../assets/search.svg) no-repeat center;
+    background: url(../images/search.svg) no-repeat center;
 }
 
 .alert.alert-info {
