@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TodoList from './TodoList';
 import StateProvider from './StateProvider';
+import KeyStrokeHandler from './KeyStrokeHandler';
 
 class App extends Component {
     render() {
@@ -8,7 +9,9 @@ class App extends Component {
             <div className="container">
                 <div className="row">
                     <StateProvider>
-                        <TodoList/>
+                        <KeyStrokeHandler>
+                            <TodoList/>
+                        </KeyStrokeHandler>
                     </StateProvider>
                 </div>
             </div>

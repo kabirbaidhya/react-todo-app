@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import FilteredList from './FilteredList';
-import {applyFilter, search} from './../services/filter';
+import {applyFilter, search} from '../services/filter';
 
 export default function TodoList(props) {
     const {list, filter, mode, query} = props.data;
