@@ -10,6 +10,7 @@ body {
     margin: 30px auto;
     border: 1px solid #ddd;
     border-radius: 2px;
+    position: relative;
 }
 
 .todolist h1 {
@@ -17,6 +18,15 @@ body {
     padding-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.todolist .info {
+    position: absolute;
+    margin-top: 20px;
+    left: 0;
+    right: 0;
+    color: #aaa;
+    text-align: center;
 }
 
 .form-control {
