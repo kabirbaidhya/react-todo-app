@@ -11,7 +11,7 @@ class StateProvider extends Component {
             query: '',
             mode: MODE_CREATE,
             filter: FILTER_ALL,
-            items: getAll()
+            list: getAll()
         }
     }
 
@@ -25,9 +25,9 @@ class StateProvider extends Component {
     }
 
     addNew(text) {
-        let updatedList = addToList(this.state.items, {text, completed: false});
+        let updatedList = addToList(this.state.list, {text, completed: false});
 
-        this.setState({items: updatedList})
+        this.setState({list: updatedList})
     }
 
     changeFilter(filter) {
@@ -35,9 +35,9 @@ class StateProvider extends Component {
     }
 
     changeStatus(itemId, completed) {
-        const updatedList = updateStatus(this.state.items, itemId, completed);
+        const updatedList = updateStatus(this.state.list, itemId, completed);
 
-        this.setState({items: updatedList});
+        this.setState({list: updatedList});
     }
 
     changeMode(mode = MODE_NONE) {
