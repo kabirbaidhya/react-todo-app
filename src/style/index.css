@@ -38,12 +38,13 @@ li.completed label {
     color: #aaa;
 }
 
-.todo-footer {
+footer {
     border-top: 1px solid #ddd;
     background-color: #F4FCE8;
     margin: 0 -20px -10px -20px;
     padding: 12px 20px;
     position: relative;
+    color: #777;
 }
 
 .filters {
@@ -72,9 +73,10 @@ li.completed label {
 
 .filters li a.selected {
     border-color: rgba(175, 47, 47, 0.2);
+    color: #555;
 }
 
-.todo-footer .buttons {
+footer .buttons {
     border-right: 1px solid #ccc;
     margin-right: 15px;
     padding-right: 10px;
@@ -87,7 +89,7 @@ li.completed label {
     height: 18px;
     width: 18px;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: 0.3s all;
 }
 
@@ -104,8 +106,11 @@ li.completed label {
     background: url(../assets/search.svg) no-repeat center;
 }
 
-.alert {
-    border: 1px solid #ddd;
+.alert.alert-info {
     margin: 10px 0;
     padding: 10px;
+    border-radius: 0;
+    background: #f2f2f2;
+    border: 1px solid rgba(229, 229, 229, 0.5);
+    color: #888;
 }

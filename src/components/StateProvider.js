@@ -27,7 +27,7 @@ class StateProvider extends Component {
     addNew(text) {
         let updatedList = addToList(this.state.list, {text, completed: false});
 
-        this.setState({list: updatedList})
+        this.setState({list: updatedList});
     }
 
     changeFilter(filter) {
