@@ -1,5 +1,5 @@
 import React from 'react';
-import {MODE_NONE} from '../services/mode';
+import {MODE_NONE} from '../../services/mode';
 
 export default function Info(props) {
     const INFO_SHORTCUT_KEYS = 'Press `/` to search and `N` to create a new item.';

@@ -1,5 +1,5 @@
 import React from 'react';
-import {getOptions} from './../services/filter';
+import {getOptions} from '../../services/filter';
 
 export default function Filter(props) {
     const options = getOptions();

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {getNextModeByKey} from '../services/mode';
-import {wrapChildrenWith} from '../util/common';
+import {getNextModeByKey} from '../../services/mode';
+import {wrapChildrenWith} from '../../util/common';
 
 class KeyStrokeHandler extends Component {
     componentWillMount() {
