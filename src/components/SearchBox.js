@@ -5,7 +5,7 @@ export default function SearchBox(props) {
 
     return (
         <input
-            type="text"
+            type="text" autoFocus
             className="form-control search"
             value={query}
             onChange={e => setSearchQuery(e.target.value)}
