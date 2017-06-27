@@ -1,40 +1,19 @@
 import React from 'react';
-import KeyCode from 'keycode-js';
+import enhance from '../hoc/wrapInputBox';
 
-class InputBox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: props.value || ''
-        };
-    }
+function InputBox(props) {
+    const { value, handleChange, handleKeyUp } = props;
 
-    handleChange(e) {
-        this.setState({value: e.target.value});
-    }
-
-    handleKeyUp(e) {
-        const {addNew} = this.props;
-        const text = this.state.value.trim();
-
-        if (e.keyCode === KeyCode.KEY_RETURN && text) {
-            addNew(text);
-            this.setState({value: ''});
-        }
-    }
-
-    render() {
-        return (
-            <input autoFocus
-                type="text"
-                className="form-control add-todo"
-                value={this.state.value}
-                onKeyUp={this.handleKeyUp.bind(this)}
-                onChange={this.handleChange.bind(this)}
-                placeholder="Add New"
-            />
-        );
-    }
+    return (
+        <input autoFocus
+            type="text"
+            className="form-control add-todo"
+            value={value}
+            onKeyUp={handleKeyUp}
+            onChange={handleChange}
+            placeholder="Add New"
+        />
+    );
 }
 
-export default InputBox;
+export default enhance(InputBox);
