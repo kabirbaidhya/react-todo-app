@@ -8,7 +8,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Add our style
 import './assets/style/index.css';
 
-ReactDOM.render(
+import { initRollout } from './services/featureflags';
+
+initRollout().then(() => {
+  ReactDOM.render(
     <App/>,
     document.getElementById('root')
-);
+  );
+})

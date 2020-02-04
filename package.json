@@ -11,7 +11,8 @@
     "keycode-js": "^0.0.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "recompose": "^0.23.5"
+    "recompose": "^0.23.5",
+    "rox-browser": "^4.8.9"
   },
   "scripts": {
     "start": "react-scripts start",

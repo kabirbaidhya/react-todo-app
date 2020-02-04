@@ -1,4 +1,5 @@
 import React from 'react';
+import { flags } from '../../services/featureflags'
 import {MODE_NONE, MODE_CREATE, MODE_SEARCH} from '../../services/mode';
 
 export default function ButtonWrapper(props) {
@@ -11,9 +12,11 @@ export default function ButtonWrapper(props) {
             <a title="Add New"
                 className={'button add ' + (isCreateMode() ? 'selected' : '')}
                 onClick={() => changeMode(isCreateMode() ? MODE_NONE : MODE_CREATE)}></a>
+            { flags.search.isEnabled() && 
             <a title="Search"
                 className={'button search ' + (isSearchMode() ? 'selected' : '')}
                 onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}></a>
+            }
         </div>
     );
 }
