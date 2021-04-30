@@ -1,4 +1,4 @@
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import { compose, withState, withHandlers } from 'recompose';
 
 export default compose(
