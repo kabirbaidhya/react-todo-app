@@ -1,13 +1,13 @@
-name: dev
+name: release
 
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
-  build-dev:
-    name: Build app dev
+  build-release:
+    name: Build app release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,14 +23,13 @@ jobs:
         with:
           path: ./*
           key: ${{ github.sha }}
-  deploy-dev:
-    name: Deploy app dev
+  push-release:
+    name: Push release artifact
     runs-on: ubuntu-latest
-    needs: build-dev
-    environment: dev
+    needs: build-release
+    environment: staging
     env:
-        DEV_CLOUDFRONT_ID: ${{ secrets.DEV_CLOUDFRONT_ID }}
-        DEV_S3_BUCKET: ${{ secrets.DEV_S3_BUCKET }}
+        S3_BUILDS_BUCKET: ${{ secrets.S3_BUILDS_BUCKET }}
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -38,17 +37,14 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
-      - name: Configure AWS Cloudfront
-        run:
-          aws configure set preview.cloudfront true
       - uses: actions/cache@v2
         id: restore-build
         with:
           path: ./*
           key: ${{ github.sha }}
-      - name: Deploy app
+      - name: Create artifact
         run:
-          npm run deploy-dev
-      - name: Invalidate cache
+          zip -r artifact.zip ./build
+      - name: Push artifact
         run:
-          npm run invalidate-cache-dev
+          aws s3 cp artifact.zip s3://$S3_BUILDS_BUCKET
