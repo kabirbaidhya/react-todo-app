@@ -24,9 +24,9 @@
     "deploy-dev": "dotenv cross-var aws s3 sync build/ s3://%DEV_S3_BUCKET% --delete",
     "deploy-staging": "dotenv cross-var aws s3 sync build/ s3://%STAGING_S3_BUCKET% --delete",
     "deploy-prod": "dotenv cross-var aws s3 sync build/ s3://%PROD_S3_BUCKET% --delete",
-    "invalidate-cache-dev": "dotenv cross-var aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id %DEV_CLOUDFRONT_ID% --paths '/*'",
-    "invalidate-cache-staging": "dotenv cross-var aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id %STAGING_CLOUDFRONT_ID% --paths '/*'",
-    "invalidate-cache-prod": "dotenv cross-var aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id %PROD_CLOUDFRONT_ID% --paths '/*'"
+    "invalidate-cache-dev": "aws configure set preview.cloudfront true && dotenv cross-var aws cloudfront create-invalidation --distribution-id %DEV_CLOUDFRONT_ID% --paths '/*'",
+    "invalidate-cache-staging": "aws configure set preview.cloudfront true && dotenv cross-var aws cloudfront create-invalidation --distribution-id %STAGING_CLOUDFRONT_ID% --paths '/*'",
+    "invalidate-cache-prod": "aws configure set preview.cloudfront true && dotenv cross-var aws cloudfront create-invalidation --distribution-id %PROD_CLOUDFRONT_ID% --paths '/*'"
   },
   "browserslist": {
     "production": [
