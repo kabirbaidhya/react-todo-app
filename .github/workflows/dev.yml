@@ -48,8 +48,7 @@ jobs:
           key: ${{ github.sha }}
       - name: print vars
         run:
-          echo DEV_S3_BUCKET: $DEV_S3_BUCKET
-          echo DEV_CLOUDFRONT_ID: $DEV_CLOUDFRONT_ID
+          echo DEV_S3_BUCKET: $DEV_S3_BUCKET && echo DEV_CLOUDFRONT_ID: $DEV_CLOUDFRONT_ID
       - name: Deploy app
         run:
           npm run deploy-dev
