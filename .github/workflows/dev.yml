@@ -19,9 +19,13 @@ jobs:
         run:
           npm run build
   deploy-dev:
-    name: Build app dev
+    name: Deploy app dev
     runs-on: ubuntu-latest
     needs: build-dev
+    environment: dev
+    env:
+        DEV_CLOUDFRONT_ID: ${{ secrets.DEV_CLOUDFRONT_ID }}
+        DEV_S3_BUCKET: ${{ secrets.DEV_S3_BUCKET }}
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
