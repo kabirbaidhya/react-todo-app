@@ -1,9 +1,8 @@
 import React from 'react';
 import {getOptions} from '../../services/filter';
 
-export default function Filter(props) {
+export default function Filter({filter,changeFilter}) {
     const options = getOptions();
-    const {filter, changeFilter} = props;
     const getClass = (key) => (key === filter ? 'selected' : '');
 
     return (
