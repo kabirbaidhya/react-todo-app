@@ -1,8 +1,6 @@
 import React from 'react';
 
-export default function SearchBox(props) {
-    const {query, setSearchQuery} = props;
-
+export default function SearchBox({query, setSearchQuery}) {
     return (
         <input
             type="text" autoFocus
