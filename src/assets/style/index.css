@@ -124,3 +124,27 @@ footer .buttons {
     border: 1px solid rgba(229, 229, 229, 0.5);
     color: #888;
 }
+
+
+.d1{
+    background-color: rgb(37, 56, 97);
+     margin-top: 0%;
+     color: rgb(206, 182, 182);
+ }
+
+ .a1{
+     display: block;
+     margin-left: 30px;
+  }
+  .a2{
+      color: white;
+  }
+  
+
+  .f1 {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(62, 34, 114);
+    color: rgb(218, 188, 188);
+    margin-top: 230px;
+  }
