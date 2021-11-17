@@ -3,7 +3,7 @@ import Filter from './Filter';
 import ButtonWrapper from './ButtonWrapper';
 
 export default function Footer(props) {
-    const {count, filter, changeFilter} = props;
+    const {activeItemcount, filter, changeFilter} = props;
 
     return (
         <footer className="clearfix">
@@ -11,7 +11,7 @@ export default function Footer(props) {
                 <ButtonWrapper {...props}/>
             </div>
             <div className="pull-left">
-                {`${count} items left`}
+                {`${activeItemcount} items left`}
             </div>
             <div className="pull-right">
                 <Filter {...{filter, changeFilter}}/>
