@@ -3,20 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.9.0"
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
     "bootstrap": "^3.4.1",
     "immutability-helper": "^2.1.1",
     "keycode-js": "^0.0.4",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "recompose": "^0.23.5"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recompose": "^0.17.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
