@@ -19,4 +19,12 @@ describe('toDo spec', () => {
     cy.get('a').contains("Completed").click()
     cy.get('p.alert').should("have.text", "There are no items.")
   })
+
+  it("TC004 Verify search field has correct placeholder", () => {
+    cy.get('a.button.search').click()
+    cy.get('input.form-control.search').should('have.attr', 'placeholder', 'Search')
+  })
+
+
+
 })
