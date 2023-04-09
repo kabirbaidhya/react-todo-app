@@ -25,6 +25,11 @@ describe('toDo spec', () => {
     cy.get('input.form-control.search').should('have.attr', 'placeholder', 'Search')
   })
 
+  it("TC005 Verify tip correctness when all checkboxes are checked", () => {
+    cy.get('input[type="checkbox"]').check()
+    cy.get('div.pull-left').should('have.text', '0 items left')
+  })
+
 
 
 })
