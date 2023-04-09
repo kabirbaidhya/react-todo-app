@@ -30,6 +30,11 @@ describe('toDo spec', () => {
     cy.get('div.pull-left').should('have.text', '0 items left')
   })
 
+  it("TC006 Verify number of sections when new section is added", () => {
+    cy.get('.form-control').type("Learn Java").type("{enter}")
+    cy.get('.checkbox').should("have.length", 4)
+  })
+
 
 
 })
