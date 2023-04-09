@@ -35,6 +35,11 @@ describe('toDo spec', () => {
     cy.get('.checkbox').should("have.length", 4)
   })
 
+  it("TC007 Verify canceling of adding section", () => {
+    cy.get('.form-control').type("Learn Java").type('{esc}')
+    cy.get('p.info').should('have.text', 'Press `/` to search and `N` to create a new item.')
+  })
+
 
 
 })
