@@ -1,5 +1,5 @@
 describe('toDo spec', () => {
-  Cypress.config("baseUrl", "http://localhost:3000"); //Cypress.config("baseUrl", "https://petstore.swagger.io/v2");
+  Cypress.config("baseUrl", "http://localhost:3000"); 
   beforeEach(() => {
     cy.visit('baseUrl')
   })
