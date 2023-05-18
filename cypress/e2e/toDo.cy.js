@@ -40,8 +40,4 @@ describe('toDo spec', () => {
     cy.get('p.info').should('have.text', 'Press `/` to search and `N` to create a new item.')
   })
 
-  // :)
-
-
-
 })
