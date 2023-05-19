@@ -40,4 +40,9 @@ describe('toDo spec', () => {
     cy.get('p.info').should('have.text', 'Press `/` to search and `N` to create a new item.')
   })
 
+  it("test test", () => {
+    cy.get('.form-control').type("new test").type('{esc}')
+    cy.get('p.info').should('have.text', 'Press `/` to search and `N` to create a new item.')
+  })
+
 })
