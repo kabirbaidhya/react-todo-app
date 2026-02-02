@@ -24,9 +24,9 @@ class StateProvider extends Component {
         return <div>{children}</div>;
     }
 
-    addNew(text) {
-        let updatedList = addToList(this.state.list, {text, completed: false});
-
+    addNew(text, priority) {
+        let updatedList = addToList(this.state.list, {text, completed: false, priority});
+        localStorage.setItem('todos', JSON.stringify(updatedList));
         this.setState({list: updatedList});
     }
 
@@ -35,9 +35,11 @@ class StateProvider extends Component {
     }
 
     changeStatus(itemId, completed) {
-        const updatedList = updateStatus(this.state.list, itemId, completed);
-
-        this.setState({list: updatedList});
+        this.setState(prevState => {
+            const updatedList = updateStatus(prevState.list, itemId, completed);
+            localStorage.setItem('todos', JSON.stringify(updatedList));
+            return {list: updatedList};
+        });
     }
 
     changeMode(mode = MODE_NONE) {
