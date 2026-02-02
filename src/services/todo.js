@@ -1,25 +1,39 @@
 import update from 'immutability-helper';
 
 /**
- * Get the list of todo items.
+ * Priority levels
+ */
+export const PRIORITY_HIGH = 'High';
+export const PRIORITY_MEDIUM = 'Medium';
+export const PRIORITY_NORMAL = 'Normal';
+
+/**
+ * Get the list of todo items from localStorage.
  * @return {Array}
  */
 export function getAll() {
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) {
+        return JSON.parse(storedTodos);
+    }
     return [
         {
             id: 1,
             text: 'Learn Javascript',
-            completed: false
+            completed: false,
+            priority: PRIORITY_NORMAL
         },
         {
             id: 2,
             text: 'Learn React',
-            completed: false
+            completed: false,
+            priority: PRIORITY_NORMAL
         },
         {
             id: 3,
             text: 'Build a React App',
-            completed: false
+            completed: false,
+            priority: PRIORITY_NORMAL
         }
     ]
 }
@@ -59,8 +73,33 @@ function getNextId() {
  */
 export function addToList(list, data) {
     let item = Object.assign({
-        id: getNextId()
+        id: getNextId(),
+        priority: PRIORITY_NORMAL
     }, data);
 
     return list.concat([item]);
+}
+
+/**
+ * Sorts the todo list by priority and completion status.
+ * Completed tasks sink to the bottom.
+ * Priority order: High > Medium > Normal
+ * @param {Array} list
+ * @return {Array}
+ */
+export function sortList(list) {
+    const priorityOrder = {
+        [PRIORITY_HIGH]: 3,
+        [PRIORITY_MEDIUM]: 2,
+        [PRIORITY_NORMAL]: 1
+    };
+
+    return [...list].sort((a, b) => {
+        // Completed tasks sink to bottom
+        if (a.completed !== b.completed) {
+            return a.completed ? 1 : -1;
+        }
+        // Sort by priority
+        return priorityOrder[b.priority] - priorityOrder[a.priority];
+    });
 }
