@@ -37,6 +37,10 @@ li.ui-state-default {
     background: #fff;
     border: none;
     border-bottom: 1px solid #f8e5e5;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 li.ui-state-default:last-child {
