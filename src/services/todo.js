@@ -20,6 +20,11 @@ export function getAll() {
             id: 3,
             text: 'Build a React App',
             completed: false
+        },
+        {
+            id: 4,
+            text: 'Learn Redux',
+            completed: false
         }
     ]
 }
