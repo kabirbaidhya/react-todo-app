@@ -13,6 +13,16 @@ body {
     position: relative;
 }
 
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.update-btn {
+    margin-left: auto;
+}
+
 .todolist h1 {
     margin: 0;
     padding-bottom: 20px;
