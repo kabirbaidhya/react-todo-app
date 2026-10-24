@@ -3,6 +3,7 @@ import {KEY_SLASH, KEY_N, KEY_ESCAPE} from 'keycode-js';
 export const MODE_NONE = 'none';
 export const MODE_SEARCH = 'search';
 export const MODE_CREATE = 'create';
+export const MODE_EDIT='edit';
 
 export function getNextModeByKey(current, keyPressed) {
     switch (current) {

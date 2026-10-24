@@ -15,5 +15,6 @@ function InputBox(props) {
         />
     );
 }
+// export default InputBox;
 
 export default enhance(InputBox);
